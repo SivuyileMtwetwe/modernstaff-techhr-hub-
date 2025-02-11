@@ -1,0 +1,509 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+}
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.container {
+    display: flex;
+    width: 200%;
+    height: 600px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Left Section: Logo */
+.logo-section {
+    width: 120%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.logo-section h1 {
+    font-size: 32px;
+    color: #003366;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.logo-section p {
+    font-size: 14px;
+    color: #555555;
+}
+
+/* Right Section: Diagonal Form Section */
+.form-section {
+    position: relative;
+    width: 174%;
+    background-color: #003366;
+    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+form {
+    width: 70%;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 60px;
+    border-radius: 3px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0.2, 0.2);
+}
+
+form label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 5px;
+    display: block;
+}
+
+form input:not([type="checkbox"]) {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #555555;
+}
+
+.options a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1e90ff;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+    }
+    .logo-section, .form-section {
+        width: 100%;
+        clip-path: none;
+    }
+    .logo-section {
+        padding: 30px;
+    }
+    form {
+        width: 90%;
+        padding: 30px;
+    }
+}
+@media screen and (max-width: 768px) {
+    body {
+        height: auto;
+        padding: 20px 0;
+    }
+    .container {
+        margin: 0 10px;
+    }
+    .logo-section img {
+        max-width: 150px;
+    }
+    .logo-section h1 {
+        font-size: 24px;
+    }
+    form {
+        width: 100%;
+        padding: 20px;
+    }
+    .options {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .options label, .options a {
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .logo-section {
+        padding: 15px;
+    }
+    .logo-section img {
+        max-width: 100px;
+    }
+    .logo-section h1 {
+        font-size: 20px;
+    }
+    form input:not([type="checkbox"]) {
+        padding: 8px;
+        margin-bottom: 20px;
+    }
+    button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+
+
+
+/* Base table styles */
+.table-responsive-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+}
+
+/* Custom scrollbar for better UX */
+.table-responsive-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-responsive-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.table-responsive-wrapper::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+/* Mobile-first table styles */
+@media screen and (max-width: 667px) {
+    .table-responsive-wrapper table {
+        min-width: 500px; /* Ensure minimum width for scrolling */
+    }
+
+    /* Stack table cells on mobile */
+    .mobile-stack tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #dee2e6;
+    }
+
+    .mobile-stack tbody td {
+        display: block;
+        text-align: left;
+        padding: 0.5rem;
+        border: none;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    .mobile-stack tbody td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 0.5rem;
+        font-weight: bold;
+    }
+
+    /* Adjust card layouts */
+    .card-body {
+        padding: 0.75rem;
+    }
+
+    /* Form controls in tables */
+    .form-control {
+        max-width: 100%;
+    }
+
+    /* Button groups in tables */
+    .btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    /* Nested tables */
+    .nested-table {
+        margin: 0;
+        border: none;
+    }
+
+    .nested-table td {
+        padding: 0.25rem;
+    }
+}
+
+/* Utility classes */
+.text-nowrap {
+    white-space: nowrap;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+/* Button Hover Effects */
+.btn {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Table Row Hover Animation */
+.table tbody tr {
+    transition: all 0.2s ease-in-out;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(0, 51, 102, 0.05) !important;
+    transform: scale(1.01);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Card Hover Effects */
+.card {
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Input Field Focus Animation */
+.form-control {
+    transition: all 0.3s ease;
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    border-color: #80bdff;
+}
+
+/* Badge Animation */
+.badge {
+    transition: all 0.3s ease;
+}
+
+.badge:hover {
+    transform: scale(1.1);
+}
+
+/* Navigation Header Animation */
+.nav-header {
+    transition: all 0.3s ease;
+}
+
+.nav-header:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+/* Logo Section Animation */
+.logo-section img {
+    transition: all 0.5s ease;
+}
+
+.logo-section img:hover {
+    transform: rotate(5deg) scale(1.1);
+}
+
+/* Form Section Animation */
+.form-section {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Dashboard Card Animation */
+.hover-card {
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+}
+
+.hover-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    opacity: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hover-card:hover {
+    transform: translateY(-7px);
+}
+
+.hover-card:hover::after {
+    opacity: 1;
+}
+
+/* Icon Animation */
+.fas, .far, .fa-solid {
+    transition: all 0.3s ease;
+}
+
+.fas:hover, .far:hover, .fa-solid:hover {
+    transform: scale(1.2);
+    color: #1e90ff;
+}
+
+/* Status Badge Animations */
+.bg-warning {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Modal Animation */
+.modal {
+    animation: modalFade 0.3s ease-in-out;
+}
+
+@keyframes modalFade {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Page Transition */
+.router-view-transition {
+    animation: pageTransition 0.4s ease-in-out;
+}
+
+@keyframes pageTransition {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader {
+    width: 8px;
+    height: 40px;
+    border-radius: 4px;
+    display: block;
+    margin: 20px auto;
+    position: relative;
+    background: currentColor;
+    color: #FFF;
+    box-sizing: border-box;
+    animation: animloader 0.3s 0.3s linear infinite alternate;
+}
+
+.loader::after,
+.loader::before {
+    content: '';
+    width: 8px;
+    height: 40px;
+    border-radius: 4px;
+    background: currentColor;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    box-sizing: border-box;
+    animation: animloader 0.3s 0.45s linear infinite alternate;
+}
+
+.loader::before {
+    left: -20px;
+    animation-delay: 0s;
+}
+
+@keyframes animloader {
+    0% {
+        height: 48px
+    }
+    100% {
+        height: 4px
+    }
+}
+
+/* Add fade transition for loader */
+.loader-overlay-enter-active,
+.loader-overlay-leave-active {
+    transition: opacity 0.3s;
+}
+
+.loader-overlay-enter-from,
+.loader-overlay-leave-to {
+    opacity: 0;}
